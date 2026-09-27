@@ -70,7 +70,7 @@ Full reply for **E-07 (the Kazakh enquiry)** from the bilingual clerk, so the `r
 
 **4. Is a role a boundary?**
 
-> No. In Week 2 terms, the role paragraph is just tokens in the context. It influences continuation, but it is not a security or correctness boundary. If a wrong `decision` were expensive, I would put the grant rule, document checks, schema validation, and final decision checks in code instead of trusting the prompt alone.
+> No. In Week 2 terms, the role paragraph is just tokens in the context. It influences continuation, but it is not a security or correctness boundary. If a wrong `decision` were expensive, I would put the grant rule, document checks, schema validation, and final decision checks in code instead of trusting the prompt alone. One issue I observed is that the auditor sometimes changed `decision` from `granted` to `more_info` while leaving `amount` as 250000. This is internally inconsistent for a downstream program, and it shows why cross-field checks such as “if `decision` is not `granted`, `amount` should be 0” should be enforced in code rather than only in the role prompt.
 
 ---
 
